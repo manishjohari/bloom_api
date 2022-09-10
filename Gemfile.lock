@@ -189,7 +189,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  annotate
+  annotate (= 3.2.0)
   bootsnap
   debug
   importmap-rails
