@@ -18,6 +18,9 @@
 class Price < ApplicationRecord
   belongs_to :currency, foreign_key: :currency_code
 
-  validates_uniqueness_of :price, scope: [:currency_code, :entity_type, :entity_id]
+  validates :currency_code, inclusion:{ in: ['usd', 'gbp', 'eur', 'jud', 'jpy']}
+
+  validates :currency_code, uniqueness: { scope: [:entity_type, :entity_id] }
+
 
 end
