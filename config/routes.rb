@@ -8,5 +8,10 @@ Rails.application.routes.draw do
         resources :sessions, only: [:create]
       end
     end
+
+    namespace :v1 do
+      resources :frames
+      resources :lenses
+    end
   end
 end

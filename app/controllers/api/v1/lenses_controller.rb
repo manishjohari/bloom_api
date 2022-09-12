@@ -1,11 +1,9 @@
-class Api::Admin::V1::FramesController < Api::BaseController
-
+class Api::V1::LensesController < Api::BaseController
   skip_before_action :authenticate_user!, only: [:index]
 
   load_and_authorize_resource
 
   def index
-    render json: Frame.active, each_serializer: FrameSerializer
   end
 
   def create
@@ -16,10 +14,5 @@ class Api::Admin::V1::FramesController < Api::BaseController
       render json: { error: frame.errors.full_messages }, status: :unprocessable_entity
     end
   end
-
-  private
-
-  def create_params
-    params.require(:frames).permit(:name, :description, :stock, :currency_code, { prices_attributes: [:price, :currency_code] })
-  end
+  
 end
