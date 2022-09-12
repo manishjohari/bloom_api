@@ -5,6 +5,7 @@
 #  id                              :bigint           not null, primary key
 #  authentication_token            :string
 #  authentication_token_updated_at :datetime
+#  currency_code                   :string           default("usd"), not null
 #  email                           :string           default(""), not null
 #  encrypted_password              :string           default(""), not null
 #  remember_created_at             :datetime
@@ -25,6 +26,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :currency_code, inclusion:{ in: ['usd', 'gbp', 'eur', 'jud', 'jpy']}
 
   belongs_to :role
 
