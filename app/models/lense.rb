@@ -14,4 +14,10 @@
 class Lense < ApplicationRecord
   include PriceData
 
+  LanseType = %w(classic blue_light transition)
+  PrescriptionType = %w(fashion single_vision varifocals)
+
+  validates :lens_type, inclusion:{ in: LanseType, message: "must be one of #{LanseType.join(', ')}"}
+  validates :prescription_type, inclusion:{ in: PrescriptionType, message: "must be one of #{PrescriptionType.join(', ')}" }
+
 end
