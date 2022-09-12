@@ -28,6 +28,13 @@ class User < ApplicationRecord
 
   belongs_to :role
 
+  ['admin'].each do |uid|
+    # user.is_admin?
+    define_method "is_#{uid.underscore}?" do
+      role.uid == uid
+    end
+  end
+
   def reset_authentication_token!
     update(
       authentication_token: Devise.friendly_token,
