@@ -12,9 +12,6 @@
 #  updated_at        :datetime         not null
 #
 class Lense < ApplicationRecord
-	has_many :prices, as: :entity
+  include PriceData
 
-  def price_in(currency_code = 'usd')
-    prices.find_by(currency_code: currency_code)&.price
-  end	
 end
