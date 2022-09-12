@@ -5,7 +5,6 @@
 #  id          :bigint           not null, primary key
 #  description :text
 #  name        :string
-#  price       :float
 #  status      :integer          default("active")
 #  stock       :integer
 #  created_at  :datetime         not null
