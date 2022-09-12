@@ -3,7 +3,7 @@
 # Table name: lenses
 #
 #  id                :bigint           not null, primary key
-#  color             :string
+#  colour            :string
 #  description       :string
 #  lens_type         :string
 #  prescription_type :string

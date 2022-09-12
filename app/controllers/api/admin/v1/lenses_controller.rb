@@ -8,17 +8,17 @@ class Api::Admin::V1::LensesController < Api::BaseController
   end
 
   def create
-    frame = Frame.new(create_params)
-    if frame.save
-      render json: { frame: FrameSerializer.new(frame) }
+    lense = Lense.new(create_params)
+    if lense.save
+      render json: { lense: LenseSerializer.new(lense) }
     else
-      render json: { error: frame.errors.full_messages }, status: :unprocessable_entity
+      render json: { error: lense.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   private
 
   def create_params
-    params.require(:frames).permit(:name, :description, :stock, :currency_code, { prices_attributes: [:price, :currency_code] })
+    params.require(:lenses).permit(:colour, :description, :prescription_type, :lens_type, :stock, { prices_attributes: [:price, :currency_code] })
   end
 end
