@@ -6,4 +6,9 @@ class Api::Admin::BaseController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   before_action :reset_session, :authenticate_user!
+
+  def authenticate_user!(options = {})
+    head :unauthorized unless signed_in?
+  end
+
 end
