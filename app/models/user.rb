@@ -12,6 +12,7 @@
 #  reset_password_token            :string
 #  created_at                      :datetime         not null
 #  updated_at                      :datetime         not null
+#  role_id                         :integer
 #
 # Indexes
 #
@@ -24,6 +25,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  belongs_to :role
 
   def reset_authentication_token!
     update(

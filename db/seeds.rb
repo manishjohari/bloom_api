@@ -7,3 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Currency.create([{ name: 'USD' }, { name: 'GBP' }, { name: 'EUR' }, { name: 'JOD' }, { name: 'JPY' }])
+
+# Populate roles
+#
+Role.create!([{uid: 'admin', name: 'Admin'}])
