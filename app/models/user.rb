@@ -24,4 +24,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def reset_authentication_token!
+    update(
+      authentication_token: Devise.friendly_token,
+      authentication_token_updated_at: Time.zone.now,
+    )
+  end
+
+  def user_info
+    {
+      user_id: id,
+      auth_token: authentication_token
+    }
+  end
 end

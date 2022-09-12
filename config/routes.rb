@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       namespace :v1 do
         resources :frames
         resources :lenses
+        resources :sessions, only: [:create]
       end
     end
   end
