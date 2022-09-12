@@ -5,7 +5,7 @@ class Api::Admin::V1::FramesController < Api::BaseController
   load_and_authorize_resource
 
   def index
-    render json: Frame.active, each_serializer: FrameSerializer
+    render json: Frame.all, each_serializer: FrameSerializer
   end
 
   def create
