@@ -1,4 +1,9 @@
 class Api::Admin::V1::FramesController < Api::Admin::BaseController
+
+  skip_before_action :authenticate_user!
+
+  load_and_authorize_resource
+
   def index
     render json: Frame.active, each_serializer: FrameSerializer
   end
