@@ -5,7 +5,7 @@ class CreateLenses < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :prescription_type
       t.string :lens_type
-      t.integer :stock
+      t.integer :stock,   default: 0
 
       t.timestamps
     end

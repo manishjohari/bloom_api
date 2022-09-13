@@ -7,7 +7,7 @@
 #  description       :string
 #  lens_type         :string
 #  prescription_type :string
-#  stock             :integer
+#  stock             :integer          default(0)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #

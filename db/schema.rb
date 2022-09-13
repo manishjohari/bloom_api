@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_135835) do
     t.string "name"
     t.text "description"
     t.integer "status", default: 1
-    t.integer "stock"
+    t.integer "stock", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_135835) do
     t.string "description"
     t.string "prescription_type"
     t.string "lens_type"
-    t.integer "stock"
+    t.integer "stock", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

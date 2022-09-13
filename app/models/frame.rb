@@ -6,7 +6,7 @@
 #  description :text
 #  name        :string
 #  status      :integer          default("active")
-#  stock       :integer
+#  stock       :integer          default(0)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
