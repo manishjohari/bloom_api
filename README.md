@@ -1,24 +1,28 @@
-# README
+## Get started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### System requirements
 
-Things you may want to cover:
+* ruby 3.0.3
+  * bundler `gem install bundler`
 
-* Ruby version
+**Install dependencies**
 
-* System dependencies
+```
+# ruby deps
+$ bundle
 
-* Configuration
+```
 
-* Database creation
+**Setup a database**
 
-* Database initialization
+```
+$ rake db:create db:migrate db:seed
+```
 
-* How to run the test suite
+**Start server**
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails s
 
-* Deployment instructions
-
-* ...
+Open a web browser: http://localhost:3000/
+```
