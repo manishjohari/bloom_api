@@ -1,4 +1,4 @@
-class Api::Admin::V1::SessionsController < Api::BaseController
+class Api::V1::SessionsController < Api::BaseController
   skip_before_action :authenticate_user!, raise: false
 
   def create
