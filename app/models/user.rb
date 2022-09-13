@@ -29,13 +29,13 @@ class User < ApplicationRecord
 
   validates :currency_code, inclusion:{ in: ['usd', 'gbp', 'eur', 'jud', 'jpy']}
 
-  belongs_to :role
+  belongs_to :role, optional: true
   has_many :glasses
 
   ['admin'].each do |uid|
     # user.is_admin?
     define_method "is_#{uid.underscore}?" do
-      role.uid == uid
+      role&.uid == uid
     end
   end
 
