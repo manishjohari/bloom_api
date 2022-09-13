@@ -11,3 +11,12 @@ Currency.create([{ name: 'USD' }, { name: 'GBP' }, { name: 'EUR' }, { name: 'JOD
 # Populate roles
 #
 Role.create!([{uid: 'admin', name: 'Admin'}])
+
+# create admin
+user = User.new(email: 'admin@example.com', password: 'foobar123')
+user.role_id = Role.admin.id
+user.save
+
+# create user
+user = User.new(email: 'user@example.com', password: 'foobar123')
+user.save
