@@ -27,7 +27,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :currency_code, inclusion:{ in: ['usd', 'gbp', 'eur', 'jud', 'jpy']}
+  ValidCurrencies = %w(usd gbp eur jud jpy)
+
+  validates :currency_code, inclusion:{ in: ValidCurrencies, message: "must be one of #{ValidCurrencies.join(', ')}"}
 
   belongs_to :role, optional: true
   has_many :glasses
