@@ -5,9 +5,8 @@ class Api::V1::SessionsController < Api::BaseController
     # api will require email and password
     user = User.find_by(email: create_params[:email].downcase)
     if user&.valid_password?(create_params[:password])
-      status = 200
       user.reset_authentication_token!
-      render json: { user: user.user_info }, status: 201
+      render json: { user: user.user_info }, status: status
     else
       status = 401
       render json: { error: 'The email or password you entered is incorrect.' }, status: status

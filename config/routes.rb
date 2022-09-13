@@ -9,10 +9,11 @@ Rails.application.routes.draw do
     end
 
     namespace :v1 do
-      resources :sessions, only: [:create]
       resources :frames, only: [:index]
       resources :lenses, only: [:index]
       resources :glasses, only: [:new, :index, :create]
+      post 'signin',         controller: :sessions,         action: :create
+      post 'signup',         controller: :registrations,    action: :create
     end
   end
 end

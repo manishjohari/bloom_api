@@ -49,6 +49,7 @@ class User < ApplicationRecord
   def user_info
     {
       user_id: id,
+      email: email,
       auth_token: authentication_token
     }
   end
