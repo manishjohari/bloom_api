@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_135835) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_12_140228) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_135835) do
     t.integer "stock", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "glasses", force: :cascade do |t|
+    t.bigint "frame_id"
+    t.bigint "lense_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["frame_id"], name: "index_glasses_on_frame_id"
+    t.index ["lense_id"], name: "index_glasses_on_lense_id"
+    t.index ["user_id"], name: "index_glasses_on_user_id"
   end
 
   create_table "lenses", force: :cascade do |t|

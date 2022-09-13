@@ -13,6 +13,7 @@
 #
 class Lense < ApplicationRecord
   include PriceData
+  include StockData
 
   LanseType = %w(classic blue_light transition)
   PrescriptionType = %w(fashion single_vision varifocals)

@@ -30,6 +30,7 @@ class User < ApplicationRecord
   validates :currency_code, inclusion:{ in: ['usd', 'gbp', 'eur', 'jud', 'jpy']}
 
   belongs_to :role
+  has_many :glasses
 
   ['admin'].each do |uid|
     # user.is_admin?

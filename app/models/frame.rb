@@ -12,6 +12,7 @@
 #
 class Frame < ApplicationRecord
   include PriceData
+  include StockData
 
   enum :status, { active: 1, inactive: 2 }
 
