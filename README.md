@@ -26,3 +26,6 @@ $ rails s
 
 Open a web browser: http://localhost:3000/
 ```
+
+API Overview
+https://github.com/manishjohari/bloom_api/wiki/API's-Overview
